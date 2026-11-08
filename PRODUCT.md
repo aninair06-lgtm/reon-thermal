@@ -39,7 +39,7 @@ REON senses and switches every cell individually. A conventional BMS can see a b
 - Product and company name: REON (EBS Na+ cabinet). The user asked for REON's own logo and colour scheme, taken from reoncorp.com: the REON wordmark (inline SVG, currentColor) and the palette reon-green #0A1A11, off-white #E4E9E1, white #F5F7F3, neon green #00D000, greens #4CDE4C / #00A600 / #005300, 16 px radius. REON's site face is Neue Montreal (licensed, not on Google Fonts); Geist stands in.
 - Layout reference supplied by the user: a credit-score dashboard concept (glassy cards, big numerals, a gradient glow, a dark lower band, pill tabs). Match its layout and finish; colour now comes from REON, not the reference. Do not reuse the reference's third-party name, logo or content.
 - Keep the interface low on words. Explain a diagnosis as plain reasoning, not as the flowchart's yes/no steps.
-- Because the page carries REON's logo, it stays a local file and is not published as a link.
+- The page carries REON's logo. The team chose to publish the project, dashboard included, in a public GitHub repo (github.com/aninair06-lgtm/reon-thermal); it is not published as a claude.ai artifact.
 
 ## Evidence on Hand
 

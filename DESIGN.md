@@ -286,7 +286,7 @@ One authored moment: pressing play (either play button; they share state) steps 
 - **Do** explain a diagnosis in one or two plain sentences that name the cause, with bold neon emphasis on the deciding facts.
 - **Do** carry the dashed "Simulated data" tag in the top bar and the simulated-data line in the footer on every surface.
 - **Do** draw charts to their container width and redraw on resize and theme change.
-- **Do** keep the REON wordmark as inline SVG in `currentColor`, and keep any page that carries it a local file, never a published link.
+- **Do** keep the REON wordmark as inline SVG in `currentColor`. The team publishes the project in its public GitHub repo; the page is not published as a claude.ai artifact.
 
 ### Don't:
 - **Don't** colour heat, health or faults in brand green.
