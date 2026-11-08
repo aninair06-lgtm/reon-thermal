@@ -228,6 +228,11 @@ h1,h2,h3{margin:0; font-weight:500; letter-spacing:-.02em; text-wrap:balance}
 .fxbox{min-width:0}
 .fx .row{cursor:default}
 .fx .row.hl rect.bg{fill:color-mix(in srgb, var(--accent) 14%, transparent)}
+#fixes > .muted{margin-top:-6px; margin-bottom:10px; max-width:75ch}
+.fxnote{display:grid; grid-template-columns:1fr 1fr; gap:12px 28px; margin-top:16px; padding-top:14px; border-top:1px solid var(--line); font-size:14px; line-height:1.45; color:var(--ink-2)}
+.fxnote p{margin:0; max-width:60ch}
+.fxnote b{color:var(--ink); font-weight:600}
+@media (max-width:640px){ .fxnote{grid-template-columns:1fr} }
 .econ{display:grid; grid-template-columns:1fr 1fr; gap:12px}
 .econ .mini b{font-size:28px}
 .foot{padding-block:28px 48px; color:var(--ink-2); font-size:13px; display:flex; gap:12px 28px; flex-wrap:wrap; justify-content:space-between; border-top:1px solid var(--line); margin-top:32px}
@@ -484,7 +489,12 @@ h1,h2,h3{margin:0; font-weight:500; letter-spacing:-.02em; text-wrap:balance}
 
       <article class="card s12" id="fixes">
         <div class="ch"><h2>Worst day: what keeps every cell under 60 °C</h2><span class="chip n">40 °C site · 55 °C start · one aged cell</span></div>
-        <div class="fxbox"><svg class="fx" id="fx" viewBox="0 0 1000 520" role="img" aria-label="Peak cell temperature for each option"></svg></div>
+        <div class="muted small">Peak temperature of the hottest cell after 2 hours at full power (30 kW), when the cabinet already starts the discharge at 55 °C. Green bars stay under the 60 °C limit.</div>
+        <div class="fxbox"><svg class="fx" id="fx" viewBox="0 0 1000 520" role="img" aria-label="Peak cell temperature for each option, with the reason it works or falls short"></svg></div>
+        <div class="fxnote">
+          <p><b>What works:</b> start the cabinet cooler, make less heat, or take the aged cell out. Two together is safest.</p>
+          <p><b>What falls short:</b> moving heat out during the discharge. From a 55 °C start, heat can't leave the cells fast enough.</p>
+        </div>
       </article>
     </div>
   </section>
@@ -823,7 +833,8 @@ function renderShap() {
   const s = D.shap, names = ["Own heat", "Neighbours' heat", "Ageing (3× R)", "Busbar + switch", "Hot site (40 °C)", "Hot start (55 °C)", "Inverter inside", "Sun on roof"];
   const items = s.K.map((k, i) => ({ k, n: names[i] })).sort((a, b) => b.k - a.k);
   $("#shpk").textContent = `${s.peak} °C peak`;
-  $("#shsub").textContent = `Cell ${s.cell}, everything at once: 25 °C → ${s.peak} °C. Bar split by cause (Shapley).`;
+  $("#shsub").textContent = `Cell ${s.cell} with every heat source on at once: 25 °C → ${s.peak} °C. Each part of the bar is how much one source adds.`;
+  $("#shsub").title = "Shares are Shapley values: each source's added heat averaged over every order of switching the 8 sources on (all 256 on/off runs), so they add up to the full rise.";
   const cols = items.map((_, i) => heat(4 - i * 3.6 / items.length));
   $("#stack").replaceChildren(...items.map((it, i) => H("i", { style: `width:${it.k / s.total * 100}%; background:${cols[i]}`, title: `${it.n} +${it.k.toFixed(1)} K` })),
     H("b", { class: "lim", style: `left:${(60 - 25) / s.total * 100}%` }));
@@ -858,25 +869,44 @@ function renderCFD() {
   const panel = (t, d, peakTxt) => H("div", {}, [H("h3", {}, t), H("div", { class: "nums" }, [H("span", {}, [H("b", {}, `${d.peak.toFixed(1)} °C`), "hottest"]), H("span", {}, [H("b", {}, `${d.spread.toFixed(1)} K`), "spread"]), H("span", {}, [H("b", {}, `${d.byp.length}`), "bypassed"])]), cfdMap(d.T, d.byp, lo, hi, colW)]);
   $("#cfd").replaceChildren(panel("All 128 cells carry the load", C), panel("13 cells bypassed (dashed)", Dd));
 }
+// one plain reason per option (from model/stage4.py: what each option changes, and why it lands where it does)
+const WHY = ["The starting point", "Hotspot out, but the 55 °C start remains", "The aged cell still makes 3× the heat",
+  "Faster heat path out of each cell", "Reach module ends only; the hot cell is mid-row", "Thin heat path to a warm rear wall",
+  "Plates are already melted at a 55 °C start", "Weak natural draft of 40 °C air", "Outside air is already 40 °C",
+  "Night fan: starts 10 K cooler, just short", "Night fan: starts 15 K cooler", "Dark paint in sun, for comparison",
+  "Cancels the sun, no more", "Half the current: half the heat, same energy", "Cold air, but heat leaves the cells too slowly",
+  "Starts cooler and the aged cell is out", "Aged cell out; plates already melted", "Plates soak up heat; aged cell still in",
+  "Aged cell out and plates soak up the peak"];
 function renderFixes() {
   const svg = $("#fx"); svg.replaceChildren();
   const its = D.ideas.map((d, k) => ({ ...d, k })).sort((a, b) => a.peak - b.peak);
-  const W = Math.max(300, Math.round($(".fxbox").clientWidth || 1000)), narrow = W < 600;
-  const L = narrow ? 0 : 230, R = narrow ? 46 : 70, rh = narrow ? 40 : 26, top = 28, lo = 40, hi = 75, X = t => L + (t - lo) / (hi - lo) * (W - L - R);
+  // wide: label | bar | reason columns. Otherwise the label sits above the bar, with the reason beside it or, on phones, on its own line
+  const W = Math.max(300, Math.round($(".fxbox").clientWidth || 1000)), wide = W >= 900, inline = !wide && W >= 560;
+  const L = wide ? 210 : 0, RS = wide ? Math.min(330, Math.round(W * .28)) : 0, R = (wide ? 58 : 46) + RS;
+  const rh = wide ? 28 : inline ? 40 : 56, top = 28, lo = 40, hi = 75, X = t => L + (t - lo) / (hi - lo) * (W - L - R);
   svg.setAttribute("viewBox", `0 0 ${W} ${top + its.length * rh + 10}`);
-  const ink = cssv("--ink"), ink2 = cssv("--ink-2"), ok = cssv("--ok");
+  const ink = cssv("--ink"), ink2 = cssv("--ink-2"), ok = cssv("--ok"), f = { "font-family": "inherit" };
   for (const t of [40, 50, 60, 70]) {
     svg.append(S("line", { x1: X(t), x2: X(t), y1: top - 6, y2: top + its.length * rh, stroke: t === 60 ? cssv("--bad") : cssv("--line"), "stroke-width": t === 60 ? 1.6 : 1, "stroke-dasharray": t === 60 ? "" : "3 4" }));
-    svg.append(S("text", { x: X(t), y: top - 12, "text-anchor": t === 40 && narrow ? "start" : "middle", "font-size": 12, fill: t === 60 ? cssv("--bad") : ink2, "font-weight": t === 60 ? 600 : 400, "font-family": "inherit" }, t === 60 ? (narrow ? "60 °C" : "60 °C limit") : `${t} °C`));
+    svg.append(S("text", { x: X(t), y: top - 12, "text-anchor": t === 40 && !wide ? "start" : "middle", "font-size": 12, fill: t === 60 ? cssv("--bad") : ink2, "font-weight": t === 60 ? 600 : 400, ...f }, t === 60 && W >= 420 ? "60 °C limit" : `${t} °C`));
   }
+  if (wide) svg.append(S("text", { x: W - RS, y: top - 12, "font-size": 12, fill: ink2, ...f }, "Why"));
   its.forEach((it, r) => {
     const y = top + r * rh, g = S("g", { class: "row" + (st.hl === it.k ? " hl" : "") });
-    const col = it.ok ? ok : heat(3 + clamp((it.peak - 60) / 13, 0, 1));
-    const by = narrow ? y + 20 : y + 6, bh = narrow ? 12 : rh - 12;
+    const col = it.ok ? ok : heat(3 + clamp((it.peak - 60) / 13, 0, 1)), wt = it.ok ? 600 : 400;
+    const by = wide ? y + 7 : y + rh - 18, bh = wide ? rh - 14 : 12;
     g.append(S("rect", { class: "bg", x: 0, y: y + 1, width: W, height: rh - 2, rx: 6, fill: "transparent" }));
-    g.append(S("text", narrow ? { x: 0, y: y + 14, "font-size": 12.5, fill: ink, "font-family": "inherit", "font-weight": it.ok ? 600 : 400 } : { x: L - 12, y: y + 17, "text-anchor": "end", "font-size": 13, fill: ink, "font-family": "inherit", "font-weight": it.ok ? 550 : 400 }, SHORT[it.k]));
+    if (wide) {
+      g.append(S("text", { x: L - 12, y: y + 18, "text-anchor": "end", "font-size": 13, fill: ink, "font-weight": wt, ...f }, SHORT[it.k]));
+      g.append(S("text", { x: W - RS, y: y + 18, "font-size": 12.5, fill: ink2, ...f }, WHY[it.k]));
+    } else if (inline) {
+      g.append(S("text", { x: 0, y: y + 14, "font-size": 12.5, fill: ink, "font-weight": wt, ...f }, [SHORT[it.k], S("tspan", { fill: ink2, "font-weight": 400 }, `  ·  ${WHY[it.k]}`)]));
+    } else {
+      g.append(S("text", { x: 0, y: y + 14, "font-size": 12.5, fill: ink, "font-weight": wt, ...f }, SHORT[it.k]));
+      g.append(S("text", { x: 0, y: y + 30, "font-size": 12, fill: ink2, ...f }, WHY[it.k]));
+    }
     g.append(S("rect", { x: X(lo), y: by, width: Math.max(2, X(it.peak) - X(lo)), height: bh, rx: 5, fill: col }));
-    g.append(S("text", { x: X(it.peak) + 6, y: by + bh / 2 + 4.5, "font-size": 12.5, fill: it.ok ? ok : ink2, "font-weight": 600, "font-family": "inherit" }, `${it.peak.toFixed(1)}`));
+    g.append(S("text", { x: X(it.peak) + 6, y: by + bh / 2 + 4.5, "font-size": 12.5, fill: it.ok ? ok : ink2, "font-weight": 600, ...f }, `${it.peak.toFixed(1)}`));
     svg.append(g);
   });
 }
