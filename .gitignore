@@ -1,0 +1,17 @@
+# dependencies and local tool installs
+node_modules/
+.claude/
+**/.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# scratch
+reon_thermal/tools/tmp/
+reon_thermal/dashboard/_*.html
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini

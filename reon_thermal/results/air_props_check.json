@@ -1,0 +1,20 @@
+{
+ "A_forced25": {
+  "constant_props_peak": 32.13302848822046,
+  "coolprop_props_peak": 32.13825593021197,
+  "change_K": 0.005227441991507931,
+  "air_T_used": "25"
+ },
+ "C_passive40": {
+  "constant_props_peak": 48.4897452840126,
+  "coolprop_props_peak": 48.490408468819865,
+  "change_K": 0.0006631848072657931,
+  "air_T_used": "50"
+ },
+ "H_hotstart": {
+  "constant_props_peak": 61.56323250736725,
+  "coolprop_props_peak": 61.56503081378367,
+  "change_K": 0.001798306416418427,
+  "air_T_used": "60"
+ }
+}

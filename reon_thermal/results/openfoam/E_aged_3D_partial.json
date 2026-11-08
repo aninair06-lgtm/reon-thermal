@@ -1,0 +1,10 @@
+{
+ "t_s": 3240.0,
+ "aged_peak": 49.459,
+ "aged_cell_peak": 49.459,
+ "byp_peak": 44.066,
+ "byp_cell_peak": 41.725,
+ "C_peak_same_time": 44.066,
+ "aged_peak_cell": "M07_C08",
+ "byp_peak_cell": "M08_C05"
+}

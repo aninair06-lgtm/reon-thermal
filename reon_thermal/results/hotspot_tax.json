@@ -1,0 +1,8 @@
+{
+ "case": "hot start 55 C, 40 C ambient, sealed, one aged cell (3x R) at M07_C08",
+ "max_power_fixed_string_kW": 19.515747070312496,
+ "max_power_cell_control_kW": 26.766723632812496,
+ "max_power_no_aged_cell_kW": 26.957885742187496,
+ "recovered_kW": 7.2509765625,
+ "recovered_kWh_per_hot_day": 14.501953125
+}

@@ -1,0 +1,752 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T07:33:25+00:00",
+  "title": "Design System: REON Cabinet Health",
+  "extensions": {
+    "colorMeta": {
+      "reon-green": {
+        "role": "primary",
+        "displayName": "REON Green",
+        "canonical": "#0A1A11",
+        "tonalRamp": [
+          "#0A0C0A",
+          "#202723",
+          "#39463E",
+          "#55665B",
+          "#75887C",
+          "#98AA9F",
+          "#BFCDC4",
+          "#E9F1EC"
+        ],
+        "darkTheme": "Light-theme ink; dark-theme ink is reon-white",
+        "labelGreys": {
+          "sei": "#7D857F",
+          "ambiguous": "#99A19B",
+          "temp_effect": "#AEB5AF",
+          "healthy": "#AEB5AF",
+          "dark": {
+            "sei": "#8E968F",
+            "ambiguous": "#6E766F",
+            "temp_effect": "#5E665F",
+            "healthy": "#5E665F"
+          }
+        }
+      },
+      "neon-green": {
+        "role": "primary",
+        "displayName": "Neon Green",
+        "canonical": "#00D000",
+        "tonalRamp": [
+          "#030F02",
+          "#003100",
+          "#005700",
+          "#007D00",
+          "#00A300",
+          "#22C71E",
+          "#7BE673",
+          "#C8FFC3"
+        ]
+      },
+      "green-bright": {
+        "role": "primary",
+        "displayName": "Green Bright",
+        "canonical": "#4CDE4C",
+        "tonalRamp": [
+          "#030F03",
+          "#003000",
+          "#005500",
+          "#007B00",
+          "#00A100",
+          "#3EC43F",
+          "#84E480",
+          "#CCFFC8"
+        ]
+      },
+      "green-mid": {
+        "role": "primary",
+        "displayName": "Green Mid",
+        "canonical": "#00A600",
+        "tonalRamp": [
+          "#040E03",
+          "#002F00",
+          "#005500",
+          "#007A00",
+          "#009F00",
+          "#4AC244",
+          "#8AE283",
+          "#CEFECA"
+        ],
+        "darkTheme": "Light-theme accent; dark accent is neon-green"
+      },
+      "green-deep": {
+        "role": "primary",
+        "displayName": "Green Deep",
+        "canonical": "#005300",
+        "tonalRamp": [
+          "#070D06",
+          "#122C11",
+          "#1C4F1A",
+          "#30722D",
+          "#4F964A",
+          "#77B871",
+          "#A6D9A1",
+          "#DBF8D8"
+        ],
+        "darkTheme": "Dark: accent ink is green-bright; gauge low end #1F7A2A"
+      },
+      "glow-mint": {
+        "role": "primary",
+        "displayName": "Glow Mint",
+        "canonical": "#CCF5CC",
+        "tonalRamp": [
+          "#090C09",
+          "#1C291C",
+          "#304930",
+          "#496B4A",
+          "#688E69",
+          "#8CB08C",
+          "#B6D2B5",
+          "#E4F4E3"
+        ]
+      },
+      "off-white": {
+        "role": "neutral",
+        "displayName": "Off White",
+        "canonical": "#E4E9E1",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242623",
+          "#40433E",
+          "#5F635C",
+          "#7F847D",
+          "#A2A7A0",
+          "#C7CAC5",
+          "#EDEFEC"
+        ],
+        "darkTheme": "Light ground; dark ground is night"
+      },
+      "reon-white": {
+        "role": "neutral",
+        "displayName": "REON White",
+        "canonical": "#F5F7F3",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252524",
+          "#414240",
+          "#60625F",
+          "#81837F",
+          "#A4A6A2",
+          "#C8CAC7",
+          "#EEEFED"
+        ]
+      },
+      "card-solid": {
+        "role": "neutral",
+        "displayName": "Card Solid",
+        "canonical": "#F9FAF8",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252524",
+          "#424241",
+          "#616160",
+          "#828381",
+          "#A4A5A4",
+          "#C9C9C8",
+          "#EEEEEE"
+        ]
+      },
+      "card-glass": {
+        "role": "neutral",
+        "displayName": "Card Glass",
+        "canonical": "rgba(245,247,243,.66)"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#4A554F",
+        "tonalRamp": [
+          "#0A0B0B",
+          "#222624",
+          "#3C4440",
+          "#5A645E",
+          "#7A867F",
+          "#9DA8A2",
+          "#C2CCC7",
+          "#EBF0ED"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "#535E58",
+        "tonalRamp": [
+          "#0A0B0B",
+          "#222624",
+          "#3C4440",
+          "#5A645E",
+          "#7A867F",
+          "#9DA8A2",
+          "#C3CCC7",
+          "#EBF0ED"
+        ]
+      },
+      "band-ink-2": {
+        "role": "neutral",
+        "displayName": "Band Ink 2",
+        "canonical": "#B6BAB4",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242523",
+          "#40433F",
+          "#5F625D",
+          "#80847E",
+          "#A3A6A1",
+          "#C7CAC6",
+          "#EDEFEC"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#030705",
+        "tonalRamp": [
+          "#0A0B0B",
+          "#232624",
+          "#3E4441",
+          "#5C6360",
+          "#7C8580",
+          "#9FA7A3",
+          "#C4CBC8",
+          "#ECEFEE"
+        ]
+      },
+      "band-night": {
+        "role": "neutral",
+        "displayName": "Band Night",
+        "canonical": "#0E2417",
+        "tonalRamp": [
+          "#090C0A",
+          "#1F2822",
+          "#36473C",
+          "#516859",
+          "#718979",
+          "#94AC9C",
+          "#BCCFC2",
+          "#E7F2EA"
+        ]
+      },
+      "card-solid-night": {
+        "role": "neutral",
+        "displayName": "Card Solid Night",
+        "canonical": "#0E1C14",
+        "tonalRamp": [
+          "#0A0C0B",
+          "#212723",
+          "#3A453E",
+          "#56665C",
+          "#76877D",
+          "#99AAA0",
+          "#C0CDC5",
+          "#E9F1EC"
+        ]
+      },
+      "ok": {
+        "role": "neutral",
+        "displayName": "Ok",
+        "canonical": "#066316",
+        "tonalRamp": [
+          "#060D06",
+          "#102C11",
+          "#154F1A",
+          "#28732D",
+          "#47974B",
+          "#71BA72",
+          "#A1DAA1",
+          "#D9F9D9"
+        ],
+        "darkTheme": "Dark: #4CDE4C"
+      },
+      "warn": {
+        "role": "neutral",
+        "displayName": "Warn",
+        "canonical": "#8A5208",
+        "tonalRamp": [
+          "#100A05",
+          "#352009",
+          "#5F3705",
+          "#885315",
+          "#AE7435",
+          "#D09860",
+          "#EDBF94",
+          "#FFE9D2"
+        ],
+        "darkTheme": "Dark: #E8A847"
+      },
+      "bad": {
+        "role": "neutral",
+        "displayName": "Bad",
+        "canonical": "#A8281F",
+        "tonalRamp": [
+          "#140706",
+          "#42130F",
+          "#771C15",
+          "#A83127",
+          "#D35244",
+          "#F67B6B",
+          "#FFAA9C",
+          "#FFDFD6"
+        ],
+        "darkTheme": "Dark: #FF7466"
+      },
+      "bad-on-band": {
+        "role": "neutral",
+        "displayName": "Bad On Band",
+        "canonical": "#FF7B6E",
+        "tonalRamp": [
+          "#140706",
+          "#421410",
+          "#761D19",
+          "#A7322C",
+          "#D25349",
+          "#F57C6F",
+          "#FFAB9F",
+          "#FFDFD7"
+        ]
+      },
+      "heat-cold": {
+        "role": "secondary",
+        "displayName": "Heat Cold",
+        "canonical": "#9FB6C9",
+        "tonalRamp": [
+          "#090B0D",
+          "#1E262D",
+          "#354450",
+          "#506474",
+          "#708597",
+          "#93A8B9",
+          "#BBCCDA",
+          "#E6F0F8"
+        ],
+        "darkTheme": "Dark: #4E6B80"
+      },
+      "heat-0": {
+        "role": "secondary",
+        "displayName": "Heat 0",
+        "canonical": "#DCE2D8",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#242622",
+          "#40433D",
+          "#5E635B",
+          "#7F847B",
+          "#A2A79E",
+          "#C6CBC4",
+          "#EDEFEB"
+        ],
+        "darkTheme": "Dark: #1C2A21"
+      },
+      "heat-1": {
+        "role": "secondary",
+        "displayName": "Heat 1",
+        "canonical": "#FFD7A3",
+        "tonalRamp": [
+          "#0E0A06",
+          "#2F2210",
+          "#553D19",
+          "#7B5A2C",
+          "#9F7B49",
+          "#C19E70",
+          "#E1C4A0",
+          "#FCECD8"
+        ],
+        "darkTheme": "Dark: #6B4626"
+      },
+      "heat-2": {
+        "role": "secondary",
+        "displayName": "Heat 2",
+        "canonical": "#FFAA52",
+        "tonalRamp": [
+          "#110903",
+          "#3A1D00",
+          "#683100",
+          "#944C00",
+          "#BC6C00",
+          "#DE9141",
+          "#F9BB80",
+          "#FFE7C8"
+        ],
+        "darkTheme": "Dark: #B8641F"
+      },
+      "heat-3": {
+        "role": "secondary",
+        "displayName": "Heat 3",
+        "canonical": "#EE6A17",
+        "tonalRamp": [
+          "#150703",
+          "#431400",
+          "#781D00",
+          "#AA3200",
+          "#D65400",
+          "#F87D3C",
+          "#FFAD7D",
+          "#FFE0C6"
+        ],
+        "darkTheme": "Dark: #F0741F"
+      },
+      "heat-4": {
+        "role": "secondary",
+        "displayName": "Heat 4",
+        "canonical": "#B8321D",
+        "tonalRamp": [
+          "#150705",
+          "#43120A",
+          "#791A0B",
+          "#AB2E1A",
+          "#D64F39",
+          "#F97962",
+          "#FFA995",
+          "#FFDED2"
+        ],
+        "darkTheme": "Dark: #FF4F2E"
+      },
+      "band-warm": {
+        "role": "secondary",
+        "displayName": "Band Warm",
+        "canonical": "#FFC24A",
+        "tonalRamp": [
+          "#100A02",
+          "#352000",
+          "#603800",
+          "#895500",
+          "#AF7600",
+          "#D19A27",
+          "#EDC274",
+          "#FFEBC2"
+        ]
+      },
+      "band-heat": {
+        "role": "secondary",
+        "displayName": "Band Heat",
+        "canonical": "#FF7A45",
+        "tonalRamp": [
+          "#140704",
+          "#431402",
+          "#781D00",
+          "#A93200",
+          "#D55317",
+          "#F87D4D",
+          "#FFAC87",
+          "#FFE0CB"
+        ]
+      },
+      "band-health": {
+        "role": "secondary",
+        "displayName": "Band Health",
+        "canonical": "#86B6FF",
+        "tonalRamp": [
+          "#070B13",
+          "#15253E",
+          "#234170",
+          "#38619F",
+          "#5583C8",
+          "#7BA6E9",
+          "#A8CBFF",
+          "#DCF0FF"
+        ]
+      },
+      "fault-tab": {
+        "role": "tertiary",
+        "displayName": "Fault Tab",
+        "canonical": "#7457F5",
+        "tonalRamp": [
+          "#0A0919",
+          "#231952",
+          "#402696",
+          "#5E3ED1",
+          "#7C61FF",
+          "#9C8BFF",
+          "#C0B8FF",
+          "#E8E7FF"
+        ],
+        "darkTheme": "Dark: #9C87FF"
+      },
+      "fault-corrosion": {
+        "role": "tertiary",
+        "displayName": "Fault Corrosion",
+        "canonical": "#0A86A8",
+        "tonalRamp": [
+          "#050D10",
+          "#032A36",
+          "#004A62",
+          "#006C8B",
+          "#1F8FB2",
+          "#57B2D3",
+          "#91D5EF",
+          "#D1F5FF"
+        ],
+        "darkTheme": "Dark: #3CC3E6"
+      },
+      "fault-damage": {
+        "role": "tertiary",
+        "displayName": "Fault Damage",
+        "canonical": "#CF3779",
+        "tonalRamp": [
+          "#15060B",
+          "#440D24",
+          "#790840",
+          "#AB1B5F",
+          "#D74080",
+          "#FB6DA3",
+          "#FFA0C7",
+          "#FFDAED"
+        ],
+        "darkTheme": "Dark: #F06AA6"
+      },
+      "fault-plating": {
+        "role": "tertiary",
+        "displayName": "Fault Plating",
+        "canonical": "#3B5BDB",
+        "tonalRamp": [
+          "#060A18",
+          "#13204F",
+          "#213690",
+          "#3553CA",
+          "#5075F7",
+          "#749CFF",
+          "#A1C5FF",
+          "#D8EEFF"
+        ],
+        "darkTheme": "Dark: #7D96FF"
+      },
+      "fault-cooling": {
+        "role": "tertiary",
+        "displayName": "Fault Cooling",
+        "canonical": "#A86A12",
+        "tonalRamp": [
+          "#100A04",
+          "#361F03",
+          "#613600",
+          "#8B5200",
+          "#B17320",
+          "#D39752",
+          "#F0BF8B",
+          "#FFE9CD"
+        ],
+        "darkTheme": "Dark: #E8A847"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Gauge health number; 56px under 640px."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Factor values and offer peaks; 52px in the timeline lead; 32px factor values on mobile."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Band and section heads; 25px on mobile. Page title is 34px/450 (28px on mobile)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card heads."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Sub-heads and diagnosis reasoning (line-height 1.55, 46ch on the band)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tabs, chips, legends, captions, chart labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-lift",
+        "value": "0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28)",
+        "purpose": "Light cards and the tab bar."
+      },
+      {
+        "name": "card-lift-dark",
+        "value": "0 1px 2px rgba(0,0,0,.4), 0 18px 40px -18px rgba(0,0,0,.8)",
+        "purpose": "Same role in dark theme."
+      },
+      {
+        "name": "float",
+        "value": "0 10px 24px -8px rgba(0,0,0,.4)",
+        "purpose": "Map tooltip."
+      },
+      {
+        "name": "button-press",
+        "value": "0 6px 16px -6px rgba(0,0,0,.35)",
+        "purpose": "Play button."
+      },
+      {
+        "name": "glass",
+        "value": "backdrop-filter: blur(20px) saturate(150%)",
+        "purpose": "Light cards; the tab bar uses blur(16px) saturate(140%)."
+      },
+      {
+        "name": "glow",
+        "value": "three radial blobs (#00D000, #4CDE4C, #CCF5CC), filter: blur(70px), opacity .42 light / .20 dark",
+        "purpose": "Hero atmosphere behind the glass cards."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ring-pop",
+        "value": "from scale(1.9), blur(3px), opacity 0 to scale(1); .7s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Newly appearing bypass rings during year playback; removed under prefers-reduced-motion."
+      },
+      {
+        "name": "playback-step",
+        "value": "260ms per week",
+        "purpose": "Year playback cadence."
+      },
+      {
+        "name": "state",
+        "value": ".2s background, color, border-color; .15s transform",
+        "purpose": "Tabs, pills, buttons, play press."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1040px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      },
+      {
+        "name": "narrow",
+        "value": "420px"
+      },
+      {
+        "name": "chart-narrow",
+        "value": "600px (container width)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pill Tabs",
+      "kind": "nav",
+      "refersTo": "tab-active",
+      "description": "Frosted pill bar of section anchors; the current section is a REON-green pill.",
+      "html": "<nav class=\"ds-tabs\"><a href=\"#\" aria-current=\"true\">Health</a><a href=\"#\">Early warning</a><a href=\"#\">Thermal</a></nav>",
+      "css": ":host{--ink:#0A1A11;--ink-2:#4A554F;--accent:#00A600;--card:rgba(245,247,243,.66);--card-edge:rgba(255,255,255,.9);--pill:#0A1A11;--pill-ink:#F5F7F3;--band:#0A1A11;--band-ink:#F5F7F3;--band-ink-2:#B6BAB4;--band-line:rgba(255,255,255,.09);--band-3:rgba(255,255,255,.09);--shadow:0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28);font-family:'Geist','Neue Montreal',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums} .ds-tabs{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:var(--card);border:1px solid var(--card-edge);box-shadow:var(--shadow);backdrop-filter:blur(16px) saturate(140%)} .ds-tabs a{padding:8px 16px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink-2);transition:background .2s,color .2s} .ds-tabs a:hover{color:var(--ink)} .ds-tabs a:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-tabs a[aria-current=\"true\"]{background:var(--pill);color:var(--pill-ink)}"
+    },
+    {
+      "name": "Glass Factor Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Frosted card with a light tabular numeral, status chip and fill bar.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-fl\">Hottest cell <span class=\"ds-chip-ok\">Cool</span></div><div class=\"ds-fv\">39.8<small>°C</small></div><div class=\"ds-bar\"><i style=\"width:49%\"></i></div><div class=\"ds-fs\"><span>Limit 60 °C</span><span>20.2 K margin</span></div></article>",
+      "css": ":host{--ink:#0A1A11;--ink-2:#4A554F;--accent:#00A600;--card:rgba(245,247,243,.66);--card-edge:rgba(255,255,255,.9);--pill:#0A1A11;--pill-ink:#F5F7F3;--band:#0A1A11;--band-ink:#F5F7F3;--band-ink-2:#B6BAB4;--band-line:rgba(255,255,255,.09);--band-3:rgba(255,255,255,.09);--shadow:0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28);font-family:'Geist','Neue Montreal',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums} .ds-card{width:260px;background:var(--card);border:1px solid var(--card-edge);border-radius:16px;box-shadow:var(--shadow);backdrop-filter:blur(20px) saturate(150%);padding:22px;color:var(--ink)} .ds-fl,.ds-fs{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--ink-2)} .ds-fs{font-size:13px;margin-top:12px} .ds-fv{font-size:40px;font-weight:300;letter-spacing:-.045em;line-height:1;margin:14px 0 4px} .ds-fv small{font-size:17px;color:var(--ink-2);margin-left:3px;letter-spacing:-.01em} .ds-bar{height:6px;border-radius:6px;background:rgba(10,26,17,.10);overflow:hidden;margin-top:12px} .ds-bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#4CDE4C,#00A600)} .ds-chip-ok{font-size:12.5px;font-weight:550;padding:4px 10px;border-radius:999px;background:rgba(0,166,0,.13);color:#066316}"
+    },
+    {
+      "name": "Status Chips",
+      "kind": "chip",
+      "refersTo": "chip-ok",
+      "description": "Semantic text on a tinted pill; neutral variant for context.",
+      "html": "<div class=\"ds-row\"><span class=\"ds-chip ok\">All caught</span><span class=\"ds-chip warn\">Uneven</span><span class=\"ds-chip bad\">74.8 °C peak</span><span class=\"ds-chip n\">per cabinet</span></div>",
+      "css": ":host{--ink:#0A1A11;--ink-2:#4A554F;--accent:#00A600;--card:rgba(245,247,243,.66);--card-edge:rgba(255,255,255,.9);--pill:#0A1A11;--pill-ink:#F5F7F3;--band:#0A1A11;--band-ink:#F5F7F3;--band-ink-2:#B6BAB4;--band-line:rgba(255,255,255,.09);--band-3:rgba(255,255,255,.09);--shadow:0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28);font-family:'Geist','Neue Montreal',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums} .ds-row{display:flex;gap:8px} .ds-chip{display:inline-flex;font-size:12.5px;font-weight:550;padding:4px 10px;border-radius:999px;white-space:nowrap} .ds-chip.ok{background:rgba(0,166,0,.13);color:#066316} .ds-chip.warn{background:rgba(200,130,20,.15);color:#8A5208} .ds-chip.bad{background:rgba(194,53,42,.12);color:#A8281F} .ds-chip.n{background:rgba(10,26,17,.10);color:var(--ink-2)}"
+    },
+    {
+      "name": "Simulated-Data Tag",
+      "kind": "chip",
+      "refersTo": "",
+      "description": "Mandatory dashed pill with a green dot in the top bar.",
+      "html": "<span class=\"ds-sim\"><b></b>Simulated data</span>",
+      "css": ":host{--ink:#0A1A11;--ink-2:#4A554F;--accent:#00A600;--card:rgba(245,247,243,.66);--card-edge:rgba(255,255,255,.9);--pill:#0A1A11;--pill-ink:#F5F7F3;--band:#0A1A11;--band-ink:#F5F7F3;--band-ink-2:#B6BAB4;--band-line:rgba(255,255,255,.09);--band-3:rgba(255,255,255,.09);--shadow:0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28);font-family:'Geist','Neue Montreal',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums} .ds-sim{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;color:var(--ink-2);padding:6px 12px;border:1px dashed rgba(10,26,17,.3);border-radius:999px;letter-spacing:.02em} .ds-sim b{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(0,166,0,.25)}"
+    },
+    {
+      "name": "Fault Pill Toggles",
+      "kind": "chip",
+      "refersTo": "pill-toggle-pressed",
+      "description": "On the band: outlined pills with a fault-hue dot; pressed fills white.",
+      "html": "<div class=\"ds-band\"><div class=\"ds-pills\"><button aria-pressed=\"true\"><i style=\"background:#0A86A8\"></i>Corrosion</button><button aria-pressed=\"false\"><i style=\"background:#7457F5\"></i>Tab or weld</button><button aria-pressed=\"false\"><i style=\"background:#CF3779\"></i>Damage</button></div></div>",
+      "css": ":host{--ink:#0A1A11;--ink-2:#4A554F;--accent:#00A600;--card:rgba(245,247,243,.66);--card-edge:rgba(255,255,255,.9);--pill:#0A1A11;--pill-ink:#F5F7F3;--band:#0A1A11;--band-ink:#F5F7F3;--band-ink-2:#B6BAB4;--band-line:rgba(255,255,255,.09);--band-3:rgba(255,255,255,.09);--shadow:0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28);font-family:'Geist','Neue Montreal',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums} .ds-band{background:var(--band);padding:20px;border-radius:16px} .ds-pills{display:flex;gap:6px;flex-wrap:wrap} .ds-pills button{font:inherit;cursor:pointer;border:1px solid var(--band-line);background:transparent;color:var(--band-ink-2);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;gap:7px;transition:background .2s,color .2s,border-color .2s} .ds-pills button:hover{color:var(--band-ink);border-color:var(--band-3)} .ds-pills button:focus-visible{outline:2px solid #00D000;outline-offset:3px} .ds-pills button[aria-pressed=\"true\"]{background:var(--band-ink);color:#0A1A11;border-color:var(--band-ink)} .ds-pills i{width:8px;height:8px;border-radius:50%}"
+    },
+    {
+      "name": "Band Offer Card",
+      "kind": "card",
+      "refersTo": "band-card",
+      "description": "Dark-band card: light peak numeral, warm thermometer with limit tick, chip and pill button.",
+      "html": "<div class=\"ds-band\"><article class=\"ds-dcard\"><h3>Pre-cool to 40 °C</h3><div class=\"ds-pk\">56.2<small>°C peak</small></div><div class=\"ds-therm\"><i style=\"width:46%\"></i><s style=\"left:57%\"></s></div><div class=\"ds-orow\"><span class=\"ds-dchip\">3.8 K under 60</span><button class=\"ds-btn\">Compare all</button></div></article></div>",
+      "css": ":host{--ink:#0A1A11;--ink-2:#4A554F;--accent:#00A600;--card:rgba(245,247,243,.66);--card-edge:rgba(255,255,255,.9);--pill:#0A1A11;--pill-ink:#F5F7F3;--band:#0A1A11;--band-ink:#F5F7F3;--band-ink-2:#B6BAB4;--band-line:rgba(255,255,255,.09);--band-3:rgba(255,255,255,.09);--shadow:0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28);font-family:'Geist','Neue Montreal',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums} .ds-band{background:var(--band);padding:20px;border-radius:16px} .ds-dcard{width:260px;background:rgba(255,255,255,.045);border:1px solid var(--band-line);border-radius:16px;padding:22px;color:var(--band-ink)} .ds-dcard h3{margin:0;font-size:17px;font-weight:550;letter-spacing:-.01em} .ds-pk{font-size:40px;font-weight:300;letter-spacing:-.045em;line-height:1;margin-top:14px} .ds-pk small{font-size:16px;color:var(--band-ink-2);margin-left:2px;letter-spacing:0} .ds-therm{position:relative;height:8px;border-radius:6px;background:var(--band-3);margin:16px 0 8px} .ds-therm i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:linear-gradient(90deg,#FFC24A,#FF7A45)} .ds-therm s{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--band-ink);border-radius:2px} .ds-orow{display:flex;justify-content:space-between;align-items:center;margin-top:12px} .ds-dchip{font-size:13px;padding:6px 11px;border-radius:999px;background:rgba(0,208,0,.14);color:#4CDE4C} .ds-btn{font:inherit;cursor:pointer;border:1px solid var(--band-line);background:var(--band-3);color:var(--band-ink);border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:500;transition:background .2s} .ds-btn:hover{background:rgba(255,255,255,.16)} .ds-btn:focus-visible{outline:2px solid #00D000;outline-offset:3px}"
+    },
+    {
+      "name": "Year Scrubber",
+      "kind": "input",
+      "refersTo": "button-play",
+      "description": "Play button plus accent-filled week slider; playback pops new bypass rings.",
+      "html": "<div class=\"ds-scrub\"><button class=\"ds-play\" aria-label=\"Play the year\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4 2.5v11l9.5-5.5z\" fill=\"currentColor\"/></svg></button><input class=\"ds-range\" type=\"range\" min=\"0\" max=\"51\" value=\"16\" style=\"--p:31%\" aria-label=\"Week\"><div class=\"ds-wk\"><b>Week 17</b><span>Apr · site 28 °C</span></div></div>",
+      "css": ":host{--ink:#0A1A11;--ink-2:#4A554F;--accent:#00A600;--card:rgba(245,247,243,.66);--card-edge:rgba(255,255,255,.9);--pill:#0A1A11;--pill-ink:#F5F7F3;--band:#0A1A11;--band-ink:#F5F7F3;--band-ink-2:#B6BAB4;--band-line:rgba(255,255,255,.09);--band-3:rgba(255,255,255,.09);--shadow:0 1px 2px rgba(10,26,17,.06), 0 16px 36px -16px rgba(0,60,20,.28);font-family:'Geist','Neue Montreal',ui-sans-serif,system-ui,sans-serif;font-variant-numeric:tabular-nums} .ds-scrub{display:flex;align-items:center;gap:14px;width:520px} .ds-play{width:42px;height:42px;flex:none;border-radius:50%;border:0;background:var(--pill);color:var(--pill-ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px -6px rgba(0,0,0,.35);transition:transform .15s} .ds-play:hover{transform:scale(1.06)} .ds-play:active{transform:scale(.96)} .ds-play:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-range{flex:1;-webkit-appearance:none;appearance:none;background:transparent;height:24px;margin:0;accent-color:var(--accent)} .ds-range::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--accent) var(--p),rgba(10,26,17,.10) var(--p))} .ds-range::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-top:-7px;border-radius:50%;background:#F9FAF8;border:2px solid var(--accent);box-shadow:0 2px 6px rgba(0,0,0,.2)} .ds-range:focus-visible{outline:2px solid var(--accent);outline-offset:3px} .ds-wk{min-width:116px;text-align:right;color:var(--ink)} .ds-wk b{display:block;font-size:20px;font-weight:450;letter-spacing:-.02em} .ds-wk span{font-size:12.5px;color:var(--ink-2)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cabinet Credit Score",
+    "overview": "One health number up top, the factors that move it beneath, the history and the offers in a dark band. The world is REON's own: an off-white ground lit by a soft neon-green glow, frosted white glass cards with 16px corners, big light numerals, and a REON-green band that the page descends into for the early-warning story. It reads as a calm consumer-grade dashboard laid over engineering data, not an engineering console of tables and alarm lists.\n\nColour carries meaning, never decoration. Green is REON's voice: whatever REON reads or does (its signal, its bypass rings, its flags, the accent on controls) is green. Heat has its own warm ramp and never borrows brand green. Fault kinds each own one fixed hue that follows them across pills, dots, 3D tags and timelines; bypass rings are always REON green, because a bypass is REON acting. Words are few; numbers and shapes do the talking, and a diagnosis is one or two plain sentences.\n\nBoth themes are first-class: a light theme by default and a dark theme via `prefers-color-scheme` or `data-theme=\"dark\"`, with every chart re-reading its colours from the tokens when the theme changes.",
+    "keyCharacteristics": [
+      "Off-white ground, neon-green glow, frosted glass cards (16px radius, soft offset shadow).",
+      "A REON-green lower band with a 32px top radius holding the timeline, diagnosis and action cards.",
+      "Big light-weight (300) tabular numerals with a small muted unit.",
+      "Pill geometry for every control: tabs, toggles, chips, buttons, the play button.",
+      "Charts drawn in SVG to their container's width, re-coloured from tokens on theme change.",
+      "One authored motion moment: the year playback, where the health gauge's arc eases to each week's value, new bypass rings pop in and failing cells slide out of their shelf in the 3D pack."
+    ],
+    "rules": [
+      {
+        "name": "The REON Is Green Rule",
+        "body": "Green means REON sensed or acted. Heat, health and faults never use green; status \"ok\" is the one semantic exception and stays on a tinted chip or a passing bar.",
+        "section": "colors"
+      },
+      {
+        "name": "The Separate Heat Rule",
+        "body": "Temperature is drawn only with the warm heat ramp, never with brand colour or fault hues.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Fault Hue Rule",
+        "body": "A fault kind's hue is assigned once and follows it into every pill, dot, tag and lane that names the fault. Bypass rings and outlines are REON green, never a fault hue (user decision).",
+        "section": "colors"
+      },
+      {
+        "name": "The Light Numeral Rule",
+        "body": "The bigger the number, the lighter the weight: 300 at 40px and up, 400-450 for 20-28px stat values.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "`font-variant-numeric: tabular-nums` is set on the body and holds everywhere numbers change.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Lift Rule",
+        "body": "Shadows are soft, offset downward and green-tinted in light theme. No hard or stacked shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use neon green only for what REON reads or does: its signal, flags, bypass rings, and the words that name its conclusion.",
+      "**Do** draw every temperature with the warm heat ramp, read from the `--h-*` tokens so both themes stay in step.",
+      "**Do** keep each fault kind on its fixed hue across pills, dots, tags and lanes; keep bypass rings and outlines green.",
+      "**Do** set big numbers light (300) and tabular with a smaller muted unit.",
+      "**Do** explain a diagnosis in one or two plain sentences that name the cause, with bold neon emphasis on the deciding facts.",
+      "**Do** carry the dashed \"Simulated data\" tag in the top bar and the simulated-data line in the footer on every surface.",
+      "**Do** draw charts to their container width and redraw on resize and theme change.",
+      "**Do** keep the REON wordmark as inline SVG in `currentColor`, and keep any page that carries it a local file, never a published link."
+    ],
+    "donts": [
+      "**Don't** colour heat, health or faults in brand green.",
+      "**Don't** render the diagnostic flowchart's yes/no steps as the explanation.",
+      "**Don't** add words where a number or a shape will do; labels stay short and sentence case.",
+      "**Don't** use hard offset shadows or square corners on cards and controls.",
+      "**Don't** animate anything beyond the year playback (gauge arc, ring pop, 3D slab transition) and short state transitions, and never ignore reduced motion.",
+      "**Don't** reuse the layout reference's third-party name, logo or content."
+    ]
+  }
+}

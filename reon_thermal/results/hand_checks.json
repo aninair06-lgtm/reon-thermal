@@ -1,0 +1,107 @@
+{
+ "cell_volume_m3": {
+  "computed": 0.00259,
+  "brief": 0.002593,
+  "rel_diff_pct": -0.0
+ },
+ "cell_mass_kg": {
+  "computed": 4.59718,
+  "brief": 4.6,
+  "rel_diff_pct": -0.06
+ },
+ "cell_C_kJ_per_K": {
+  "computed": 4.82703,
+  "brief": 4.83,
+  "rel_diff_pct": -0.06
+ },
+ "q_vol_W_per_m3_at_6.1W": {
+  "computed": 2352.5964,
+  "brief": 2353,
+  "rel_diff_pct": -0.02
+ },
+ "pack_C_kJ_per_K": {
+  "computed": 617.86047,
+  "brief": 618,
+  "rel_diff_pct": -0.02
+ },
+ "heat_normal_W": {
+  "computed": 780.8,
+  "brief": 780.8,
+  "rel_diff_pct": 0.0
+ },
+ "heat_13_bypassed_115_at_7.6_W": {
+  "computed": 874.0,
+  "brief": 874,
+  "rel_diff_pct": 0.0
+ },
+ "adiabatic_rise_2h_6.1W_K": {
+  "computed": 9.09875,
+  "brief": 9.1,
+  "rel_diff_pct": -0.01
+ },
+ "adiabatic_rise_2h_7.6W_K": {
+  "computed": 11.33615,
+  "brief": 11.3,
+  "rel_diff_pct": 0.32
+ },
+ "adiabatic_rise_2h_18.3W_K": {
+  "computed": 27.29626,
+  "brief": 27.0,
+  "rel_diff_pct": 1.1
+ },
+ "forced_air_rise_K": {
+  "computed": 4.34814,
+  "brief": 4.3,
+  "rel_diff_pct": 1.12
+ },
+ "wall_area_m2": {
+  "computed": 9.03,
+  "brief": 9.0,
+  "rel_diff_pct": 0.33
+ },
+ "UA_passive_h5_W_per_K": {
+  "computed": 45.15,
+  "brief": 45,
+  "rel_diff_pct": 0.33
+ },
+ "UA_passive_h10_W_per_K": {
+  "computed": 90.3,
+  "brief": 90,
+  "rel_diff_pct": 0.33
+ },
+ "tau_h5_h": {
+  "computed": 3.80128,
+  "brief": 3.8,
+  "rel_diff_pct": 0.03
+ },
+ "tau_h10_h": {
+  "computed": 1.90064,
+  "brief": 1.9,
+  "rel_diff_pct": 0.03
+ },
+ "contact_R_m2K_per_W": {
+  "computed": 0.0013,
+  "brief": 0.0013,
+  "rel_diff_pct": 0.0
+ },
+ "through_cell_R_m2K_per_W_k1": {
+  "computed": 0.0717,
+  "brief": 0.0717,
+  "rel_diff_pct": 0.0
+ },
+ "module_length_closure_mm": {
+  "computed": 1150.2,
+  "brief": 1150.2,
+  "rel_diff_pct": -0.0
+ },
+ "module_allowance_mm": {
+  "computed": 19.8,
+  "brief": 19.8,
+  "rel_diff_pct": 0.0
+ },
+ "energy_share_115_of_128_pct": {
+  "computed": 111.30435,
+  "brief": 111,
+  "rel_diff_pct": 0.27
+ }
+}

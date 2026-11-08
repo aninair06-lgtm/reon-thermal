@@ -1,0 +1,12 @@
+{
+ "t_end": 7200.0,
+ "C_peak": 48.934,
+ "D_peak": 51.044,
+ "C_mean_end": 48.8033359375,
+ "D_active_mean_end": 50.70169565217391,
+ "D_bypassed_mean_end": 42.302307692307686,
+ "C_spread": 0.6290500000000065,
+ "D_spread": 10.38391999999999,
+ "C_peak_cell": "M08_C04",
+ "D_peak_cell": "M05_C10"
+}

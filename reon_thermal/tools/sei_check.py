@@ -1,0 +1,10 @@
+import warnings; warnings.filterwarnings("ignore")
+import pybamm
+print("pybamm", pybamm.__version__)
+print("sodium_ion models:", [n for n in dir(pybamm.sodium_ion) if not n.startswith("_")])
+m = pybamm.sodium_ion.BasicDFN()
+print("BasicDFN options:", getattr(m, "options", None))
+p = pybamm.ParameterValues("Chayambuka2022")
+print("SEI parameters in Chayambuka2022:", [k for k in p.keys() if "SEI" in k][:8])
+li = pybamm.lithium_ion.DFN(options={"SEI": "solvent-diffusion limited"})
+print("lithium-ion DFN accepts SEI option:", li.options["SEI"])

@@ -1,0 +1,17 @@
+{
+ "case": "Ct_lam_m1",
+ "mode": "passive_transient",
+ "best": {
+  "h_mult": 0.5,
+  "Q_circ": 0.08,
+  "G_ex": 10.0,
+  "h_gap_nat": 2.0
+ },
+ "rms_K": 0.09415096917832902,
+ "peak_err_K": 0.0012229148239484289,
+ "spread_err_K": 0.09328131310816445,
+ "t_end": 7200.0,
+ "n_combos": 750,
+ "gpu_seconds": 43.68271803855896,
+ "default_rms_K": null
+}

@@ -1,0 +1,5 @@
+M03_C05 tab       injected wk10  flagged 10  heat-visible 10  degraded None  final dT +2.81 K  cor +0.85  soh_dev -0.003
+M05_C12 corrosion injected wk 5  flagged 13  heat-visible 19  degraded None  final dT +4.09 K  cor +0.85  soh_dev -0.002
+M02_C09 damage    injected wk20  flagged 20  heat-visible None  degraded 20  final dT -2.00 K  cor +0.39  soh_dev -0.088
+M06_C03 plating   injected wk 4  flagged 4  heat-visible None  degraded 4  final dT +0.67 K  cor +0.46  soh_dev -0.035
+M07_C08 cooling   injected wk26  flagged None  heat-visible 26  degraded None  final dT +2.25 K  cor +0.23  soh_dev -0.001

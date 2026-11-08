@@ -1,0 +1,27 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "reon_thermal/dashboard/page.html"
+        ],
+        "createdAt": "2026-11-08T04:57:17.407Z",
+        "reason": "Claude: the flagged element is the dark band section, whose inner .wrap carries a max(16px) side gutter and the band 48/56px block padding; verified in desktop and 390px renders"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "reon_thermal/dashboard/page.html"
+        ],
+        "createdAt": "2026-11-08T05:17:27.464Z",
+        "reason": "Claude: detector merges the light and dark token blocks into pairs that never render; a computed-style contrast pass over every text node in both themes shows no failures after the chip colour fix"
+      }
+    ]
+  }
+}

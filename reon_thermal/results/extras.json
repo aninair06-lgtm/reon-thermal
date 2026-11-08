@@ -1,0 +1,1027 @@
+{
+ "flow_regime": {
+  "Re": {
+   "inlet grille": 15006.305170239591,
+   "bottom space under M01": 8034.532923647096,
+   "rear plenum (top)": 7544.260251728273,
+   "front plenum (to top space)": 5356.500605549417,
+   "30 mm gap (largest |flow|)": 206.10635372495443
+  },
+  "Ra_cabinet_height": 5877756826.236491,
+  "Ra_module_face": 4017159.3935997477,
+  "Richardson_front_plenum": 2.7549539668446097,
+  "dT_assumed_K": 5.0,
+  "verdict": "forced: plenums Re 3,000-9,000 (transitional), gaps Re < 100 (laminar, buoyancy-dominated), Ri ~ 1 (mixed convection) -> run both laminar and k-omega SST and report the spread; sealed: Ra_H ~ 5e9 (transitional over the full height) but Ra < 1e7 on each module face -> laminar with gravity on"
+ },
+ "k_through": {
+  "series_bound_W_mK": [
+   0.6552030445801076,
+   1.4573644436272533
+  ],
+  "inplane_parallel_bound_W_mK": [
+   15.806539509536785,
+   18.929155313351497
+  ],
+  "layers": [
+   [
+    "Al collector (cathode)",
+    15,
+    205,
+    237
+   ],
+   [
+    "cathode coating x2",
+    140,
+    0.7,
+    1.6
+   ],
+   [
+    "separator x2 (wetted)",
+    40,
+    0.2,
+    0.5
+   ],
+   [
+    "hard-carbon anode x2",
+    160,
+    1.0,
+    1.9
+   ],
+   [
+    "Al collector (anode)",
+    12,
+    205,
+    237
+   ]
+  ],
+  "sweep": {
+   "0.5": {
+    "C": 48.48949417509289,
+    "hot_start": 61.56186734902527,
+    "aged": 58.80640840176117
+   },
+   "1.0": {
+    "C": 48.4897452840126,
+    "hot_start": 61.56323250736725,
+    "aged": 56.23036410787761
+   },
+   "2.0": {
+    "C": 48.489686925797876,
+    "hot_start": 61.56261159638281,
+    "aged": 54.14736938659434
+   },
+   "3.0": {
+    "C": 48.48857958370566,
+    "hot_start": 61.5559904694924,
+    "aged": 53.20127419985996
+   }
+  },
+  "note": "series rule through one repeat unit, electrolyte-wetted values; case walls and winding gaps would lower it further"
+ },
+ "controller_robustness": {
+  "case": "hot start 55 C, aged cell, constant current, max 4 bypassed",
+  "n_runs": 54,
+  "peak_min": 61.53511199668445,
+  "peak_max": 69.1232645405936,
+  "runs": [
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.536474367360704,
+    "energy_kWh": 58.130208333333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.536474367360704,
+    "energy_kWh": 58.130208333333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.536474367360704,
+    "energy_kWh": 58.130208333333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.54823264838601,
+    "energy_kWh": 58.5625,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.54823264838601,
+    "energy_kWh": 58.5625,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.54823264838601,
+    "energy_kWh": 58.5625,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.53660309011359,
+    "energy_kWh": 58.138020833333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.53660309011359,
+    "energy_kWh": 58.138020833333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.53660309011359,
+    "energy_kWh": 58.138020833333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.548354564362754,
+    "energy_kWh": 58.567708333333336,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.548354564362754,
+    "energy_kWh": 58.567708333333336,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.548354564362754,
+    "energy_kWh": 58.567708333333336,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.53698765430692,
+    "energy_kWh": 58.161458333333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.53698765430692,
+    "energy_kWh": 58.161458333333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.53698765430692,
+    "energy_kWh": 58.161458333333336,
+    "switch_events": 1,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.548737037190165,
+    "energy_kWh": 58.582682291666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.548737037190165,
+    "energy_kWh": 58.582682291666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.548737037190165,
+    "energy_kWh": 58.582682291666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 69.1228162143685,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 69.1228162143685,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 69.1228162143685,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.5477917029208,
+    "energy_kWh": 58.272135416666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.5477917029208,
+    "energy_kWh": 58.272135416666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.5477917029208,
+    "energy_kWh": 58.272135416666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 69.12292844876362,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 69.12292844876362,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 69.12292844876362,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.54818410996905,
+    "energy_kWh": 58.279947916666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.54818410996905,
+    "energy_kWh": 58.279947916666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.54818410996905,
+    "energy_kWh": 58.279947916666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 69.1232645405936,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 69.1232645405936,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 69.1232645405936,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.54934619909782,
+    "energy_kWh": 58.303385416666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.54934619909782,
+    "energy_kWh": 58.303385416666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.54934619909782,
+    "energy_kWh": 58.303385416666664,
+    "switch_events": 3,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.748988740231155,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 65.1950728522104,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.68607311892081,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.599929628904505,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.687658528944425,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 64.79662070889474,
+    "energy_kWh": 58.125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 63.5384760054243,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 65.23680058233383,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.691642066163986,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 64.11653013730852,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.69540242357117,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 64.83953675757652,
+    "energy_kWh": 58.1328125,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 60.0,
+    "peak_C": 61.53511199668445,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.80230911946055,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "T_on": 55.0,
+    "dwell_s": 900.0,
+    "peak_C": 61.70722881758217,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 60.0,
+    "peak_C": 64.23896495197621,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 300.0,
+    "peak_C": 61.667226112777435,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "T_on": 57.0,
+    "dwell_s": 900.0,
+    "peak_C": 64.95824274444348,
+    "energy_kWh": 58.15625,
+    "switch_events": 0,
+    "max_bypassed": 4
+   }
+  ]
+ },
+ "rotating_and_duty": {
+  "rotate_k1_every60s": 63.0897796116423,
+  "rotate_k1_every300s": 63.22051363297664,
+  "rotate_k2_every60s": 62.85672295194598,
+  "rotate_k2_every300s": 62.90635365857472,
+  "rotate_k4_every60s": 62.435350238607,
+  "rotate_k4_every300s": 62.569466661093976,
+  "duty_aged_25pct": 66.38639462221659,
+  "duty_aged_50pct": 63.59328746926147,
+  "duty_aged_75pct": 61.5580565883665,
+  "duty_aged_100pct": 61.5522553093027,
+  "fixed_bypass_aged": 61.5522553093027,
+  "no_bypass": 69.13836108042649
+ },
+ "balancing": {
+  "per_year": {
+   "year_0": {
+    "fixed_kWh": 57.578178862029844,
+    "control_kWh": 58.73476743832806,
+    "recovered_kWh": 1.1565885762982253
+   },
+   "year_1": {
+    "fixed_kWh": 55.39052183082366,
+    "control_kWh": 56.51365136764789,
+    "recovered_kWh": 1.12312953682423
+   },
+   "year_3": {
+    "fixed_kWh": 50.64637793147596,
+    "control_kWh": 51.715498865632846,
+    "recovered_kWh": 1.0691209341568841
+   },
+   "year_5": {
+    "fixed_kWh": 45.2953380898476,
+    "control_kWh": 46.35710320119381,
+    "recovered_kWh": 1.061765111346209
+   }
+  },
+  "brief_16_cell_example": {
+   "fixed_Ah": 70.0,
+   "average_Ah": 84.0625,
+   "sum_limited_Ah": null
+  },
+  "note": "fixed string: 128 x weakest cell; cell control: each cell runs to its own end while >= 115 cells remain (inverter voltage, assumed)"
+ },
+ "stage4_per_year": {
+  "hot_days": 120,
+  "ac_year_round_kWh": 961.7188466959368,
+  "ac_cop_mean": 3.5563031671970475,
+  "ideas": {
+   "Do nothing (worst day)": {
+    "peak_C": 69.13836108042649,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Bypass the aged cell": {
+    "peak_C": 61.5522553093027,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Move the aged cell to the coolest slot": {
+    "peak_C": 66.27772886144639,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Turn cells so heat leaves along 25 W/m K": {
+    "peak_C": 63.47260864061906,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Aluminium spreaders to the side walls (3 W/K per module end)": {
+    "peak_C": 69.13117809423073,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Heat pipe from every cell to the rear wall (1 W/K each)": {
+    "peak_C": 65.51634326401357,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Phase-change plates in the gaps (0.25 kg/cell, melts 46 C)": {
+    "peak_C": 68.32240561504861,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Chimney vent (natural draft ~0.03 m3/s, 40 C air)": {
+    "peak_C": 67.89126789360085,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Fan, no air conditioning (0.15 m3/s of 40 C air)": {
+    "peak_C": 66.38203051585828,
+    "below_60": false,
+    "kWh_per_year": 9.6
+   },
+   "Night pre-cooling: start at 45 C": {
+    "peak_C": 60.557434839127126,
+    "below_60": false,
+    "kWh_per_year": 28.799999999999997
+   },
+   "Night pre-cooling: start at 40 C": {
+    "peak_C": 56.23036410787761,
+    "below_60": true,
+    "kWh_per_year": 38.4
+   },
+   "Worst day plus afternoon sun (dark paint, absorptance 0.6)": {
+    "peak_C": 72.59432206030326,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Reflective paint with that sun (absorptance 0.6 -> 0.2)": {
+    "peak_C": 69.36538760330374,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Same energy at half power over 4 h": {
+    "peak_C": 57.53942733659626,
+    "below_60": true,
+    "kWh_per_year": 0.0
+   },
+   "Air conditioning (0.15 m3/s supplied at 20 C)": {
+    "peak_C": 62.687592051583216,
+    "below_60": false,
+    "kWh_per_year": 89.2865967087578
+   },
+   "Bypass aged cell + pre-cool to 45 C": {
+    "peak_C": 52.86797422097557,
+    "below_60": true,
+    "kWh_per_year": 28.799999999999997
+   },
+   "Bypass aged cell + phase-change plates": {
+    "peak_C": 60.99880357130733,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Phase-change plates that melt at 57 C": {
+    "peak_C": 63.41438609639248,
+    "below_60": false,
+    "kWh_per_year": 0.0
+   },
+   "Bypass aged cell + plates that melt at 57 C": {
+    "peak_C": 56.97404657298575,
+    "below_60": true,
+    "kWh_per_year": 0.0
+   }
+  }
+ },
+ "controller_excess": {
+  "case": "hot start 55 C, aged cell M07_C08, constant current, up to 4 slots",
+  "n_runs": 27,
+  "peak_min": 62.658519373320125,
+  "peak_max": 66.69468716682262,
+  "peak_by_noise": {
+   "0.0": 63.70772613563547,
+   "0.5": 63.884658896010045,
+   "2.0": 66.69468716682262
+  },
+  "runs": [
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "dwell_s": 60.0,
+    "peak_C": 62.99957469313235,
+    "energy_kWh": 59.7421875,
+    "mean_bypassed": 0.55
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "dwell_s": 300.0,
+    "peak_C": 62.99957469313235,
+    "energy_kWh": 59.7421875,
+    "mean_bypassed": 0.55
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 0.0,
+    "dwell_s": 900.0,
+    "peak_C": 63.184678439228826,
+    "energy_kWh": 59.7421875,
+    "mean_bypassed": 0.55
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "dwell_s": 60.0,
+    "peak_C": 63.49926164645432,
+    "energy_kWh": 59.758463541666664,
+    "mean_bypassed": 0.5174337517433751
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "dwell_s": 300.0,
+    "peak_C": 63.49926164645432,
+    "energy_kWh": 59.758463541666664,
+    "mean_bypassed": 0.5174337517433751
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 30.0,
+    "dwell_s": 900.0,
+    "peak_C": 63.320484289150976,
+    "energy_kWh": 59.747395833333336,
+    "mean_bypassed": 0.5411436541143654
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "dwell_s": 60.0,
+    "peak_C": 63.70772613563547,
+    "energy_kWh": 59.763020833333336,
+    "mean_bypassed": 0.5141242937853108
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "dwell_s": 300.0,
+    "peak_C": 63.70772613563547,
+    "energy_kWh": 59.763020833333336,
+    "mean_bypassed": 0.5141242937853108
+   },
+   {
+    "noise_K": 0.0,
+    "delay_s": 120.0,
+    "dwell_s": 900.0,
+    "peak_C": 63.5647249662434,
+    "energy_kWh": 59.760416666666664,
+    "mean_bypassed": 0.519774011299435
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "dwell_s": 60.0,
+    "peak_C": 62.868105945683226,
+    "energy_kWh": 58.860677083333336,
+    "mean_bypassed": 2.4305555555555554
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "dwell_s": 300.0,
+    "peak_C": 62.84155855002835,
+    "energy_kWh": 58.279947916666664,
+    "mean_bypassed": 3.6694444444444443
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 0.0,
+    "dwell_s": 900.0,
+    "peak_C": 62.8166601601544,
+    "energy_kWh": 58.204427083333336,
+    "mean_bypassed": 3.8305555555555557
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "dwell_s": 60.0,
+    "peak_C": 62.72962064581116,
+    "energy_kWh": 58.856119791666664,
+    "mean_bypassed": 2.4504881450488143
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "dwell_s": 300.0,
+    "peak_C": 62.875467466577035,
+    "energy_kWh": 58.287109375,
+    "mean_bypassed": 3.6694560669456067
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 30.0,
+    "dwell_s": 900.0,
+    "peak_C": 63.782484990047244,
+    "energy_kWh": 58.194661458333336,
+    "mean_bypassed": 3.8675034867503486
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "dwell_s": 60.0,
+    "peak_C": 62.658519373320125,
+    "energy_kWh": 58.853515625,
+    "mean_bypassed": 2.48728813559322
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "dwell_s": 300.0,
+    "peak_C": 63.18224103532645,
+    "energy_kWh": 58.33984375,
+    "mean_bypassed": 3.6016949152542375
+   },
+   {
+    "noise_K": 0.5,
+    "delay_s": 120.0,
+    "dwell_s": 900.0,
+    "peak_C": 63.884658896010045,
+    "energy_kWh": 58.217447916666664,
+    "mean_bypassed": 3.867231638418079
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "dwell_s": 60.0,
+    "peak_C": 65.35598606548709,
+    "energy_kWh": 58.125,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "dwell_s": 300.0,
+    "peak_C": 65.96127523086706,
+    "energy_kWh": 58.125,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 0.0,
+    "dwell_s": 900.0,
+    "peak_C": 66.69468716682262,
+    "energy_kWh": 58.125,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "dwell_s": 60.0,
+    "peak_C": 65.2752479644487,
+    "energy_kWh": 58.1328125,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "dwell_s": 300.0,
+    "peak_C": 65.93939574839536,
+    "energy_kWh": 58.1328125,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 30.0,
+    "dwell_s": 900.0,
+    "peak_C": 66.67462751263679,
+    "energy_kWh": 58.1328125,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "dwell_s": 60.0,
+    "peak_C": 65.24882271017803,
+    "energy_kWh": 58.15625,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "dwell_s": 300.0,
+    "peak_C": 64.83616491687172,
+    "energy_kWh": 58.15625,
+    "mean_bypassed": 4.0
+   },
+   {
+    "noise_K": 2.0,
+    "delay_s": 120.0,
+    "dwell_s": 900.0,
+    "peak_C": 66.61255614807804,
+    "energy_kWh": 58.15625,
+    "mean_bypassed": 4.0
+   }
+  ]
+ },
+ "controller_latch_resistance": {
+  "latch_noise0.0_delay0": 61.558800796815895,
+  "latch_noise0.0_delay120": 61.55998152868638,
+  "latch_noise0.5_delay0": 61.51588936319063,
+  "latch_noise0.5_delay120": 61.51712396022041,
+  "latch_noise2.0_delay0": 57.270355772833604,
+  "latch_noise2.0_delay120": 57.674615152750135,
+  "resistance_sigma0.05": {
+   "worst": 61.5522553093027,
+   "best": 61.5522553093027,
+   "hit_rate": 1.0
+  },
+  "resistance_sigma0.2": {
+   "worst": 61.5522553093027,
+   "best": 61.5522553093027,
+   "hit_rate": 1.0
+  },
+  "resistance_sigma0.5": {
+   "worst": 69.13423970845734,
+   "best": 61.5522553093027,
+   "hit_rate": 0.8333333333333334
+  }
+ }
+}

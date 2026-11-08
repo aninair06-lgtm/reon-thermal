@@ -1,0 +1,209 @@
+{
+ "case": "sealed, 40 C ambient, start 55 C, aged cell M07_C08, 30 kW x 2 h",
+ "coolest_slot": "M01_C01",
+ "fan_W": 40.0,
+ "ac_cop": 3.231360072930369,
+ "ideas": [
+  {
+   "idea": "Do nothing (worst day)",
+   "kind": "",
+   "peak_C": 69.13836108042649,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": -3.262304100516599e-14
+  },
+  {
+   "idea": "Bypass the aged cell",
+   "kind": "control only",
+   "peak_C": 61.5522553093027,
+   "peak_cell": "M05_C10",
+   "below_60": false,
+   "energy_kWh": 59.53125,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": -3.3393664021036055e-14
+  },
+  {
+   "idea": "Move the aged cell to the coolest slot",
+   "kind": "maintenance swap",
+   "peak_C": 66.27772886144639,
+   "peak_cell": "M01_C01",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 8.155760251291497e-14
+  },
+  {
+   "idea": "Turn cells so heat leaves along 25 W/m K",
+   "kind": "redesign of the stack",
+   "peak_C": 63.47260864061906,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": -1.6311520502582995e-14
+  },
+  {
+   "idea": "Aluminium spreaders to the side walls (3 W/K per module end)",
+   "kind": "hardware, passive",
+   "peak_C": 69.13117809423073,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 3.262304100516599e-14
+  },
+  {
+   "idea": "Heat pipe from every cell to the rear wall (1 W/K each)",
+   "kind": "hardware, passive",
+   "peak_C": 65.51634326401357,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 8.155760251291497e-14
+  },
+  {
+   "idea": "Phase-change plates in the gaps (0.25 kg/cell, melts 46 C)",
+   "kind": "hardware, passive",
+   "peak_C": 68.32240561504861,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 0.0
+  },
+  {
+   "idea": "Chimney vent (natural draft ~0.03 m3/s, 40 C air)",
+   "kind": "two grilles, no power",
+   "peak_C": 67.89126789360085,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 1.6311520502582995e-14
+  },
+  {
+   "idea": "Fan, no air conditioning (0.15 m3/s of 40 C air)",
+   "kind": "fan",
+   "peak_C": 66.38203051585828,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.08,
+   "closure_pct": -1.7942672552841296e-13
+  },
+  {
+   "idea": "Night pre-cooling: start at 45 C",
+   "kind": "fan at night",
+   "peak_C": 60.557434839127126,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.24,
+   "closure_pct": -8.155760251291497e-14
+  },
+  {
+   "idea": "Night pre-cooling: start at 40 C",
+   "kind": "fan at night",
+   "peak_C": 56.23036410787761,
+   "peak_cell": "M07_C08",
+   "below_60": true,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.32,
+   "closure_pct": -4.893456150774899e-14
+  },
+  {
+   "idea": "Worst day plus afternoon sun (dark paint, absorptance 0.6)",
+   "kind": "for comparison",
+   "peak_C": 72.59432206030326,
+   "peak_cell": "M08_C16",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 3.6996486470906714e-14
+  },
+  {
+   "idea": "Reflective paint with that sun (absorptance 0.6 -> 0.2)",
+   "kind": "paint",
+   "peak_C": 69.36538760330374,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 6.501074154099222e-14
+  },
+  {
+   "idea": "Same energy at half power over 4 h",
+   "kind": "scheduling",
+   "peak_C": 57.53942733659626,
+   "peak_cell": "M07_C08",
+   "below_60": true,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 1.1418064351808097e-13
+  },
+  {
+   "idea": "Air conditioning (0.15 m3/s supplied at 20 C)",
+   "kind": "chiller",
+   "peak_C": 62.687592051583216,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.7440549725729817,
+   "closure_pct": -1.1418064351808097e-13
+  },
+  {
+   "idea": "Bypass aged cell + pre-cool to 45 C",
+   "kind": "control + fan",
+   "peak_C": 52.86797422097557,
+   "peak_cell": "M05_C10",
+   "below_60": true,
+   "energy_kWh": 59.53125,
+   "extra_kWh_per_day": 0.24,
+   "closure_pct": 6.678732804207211e-14
+  },
+  {
+   "idea": "Bypass aged cell + phase-change plates",
+   "kind": "control + hardware",
+   "peak_C": 60.99880357130733,
+   "peak_cell": "M06_C11",
+   "below_60": false,
+   "energy_kWh": 59.53125,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": 1.6696832010518028e-14
+  },
+  {
+   "idea": "Phase-change plates that melt at 57 C",
+   "kind": "hardware, passive",
+   "peak_C": 63.41438609639248,
+   "peak_cell": "M07_C08",
+   "below_60": false,
+   "energy_kWh": 60.0,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": -1.6311520502582995e-14
+  },
+  {
+   "idea": "Bypass aged cell + plates that melt at 57 C",
+   "kind": "control + hardware",
+   "peak_C": 56.97404657298575,
+   "peak_cell": "M06_C03",
+   "below_60": true,
+   "energy_kWh": 59.53125,
+   "extra_kWh_per_day": 0.0,
+   "closure_pct": -1.6696832010518028e-14
+  }
+ ],
+ "pybamm_heat_W": 28.460673986578033,
+ "pybamm_whatif": {
+  "normal start 40 C": {
+   "peak_C": 79.25620115276037,
+   "max_power_kW": 21.330322265625
+  },
+  "hot start 55 C": {
+   "peak_C": 92.05219133857356,
+   "max_power_kW": 12.479736328125
+  }
+ }
+}
