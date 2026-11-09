@@ -223,11 +223,17 @@ h1,h2,h3{margin:0; font-weight:500; letter-spacing:-.02em; text-wrap:balance}
 .fxbox{min-width:0}
 .fx .row{cursor:default}
 .fx .row.hl rect.bg{fill:color-mix(in srgb, var(--accent) 14%, transparent)}
-#fixes > .muted{margin-top:-6px; margin-bottom:10px; max-width:75ch}
-.fxnote{display:grid; grid-template-columns:1fr 1fr; gap:12px 28px; margin-top:16px; padding-top:14px; border-top:1px solid var(--line); font-size:14px; line-height:1.45; color:var(--ink-2)}
-.fxnote p{margin:0; max-width:60ch}
-.fxnote b{color:var(--ink); font-weight:600}
-@media (max-width:640px){ .fxnote{grid-template-columns:1fr} }
+.fxintro{margin:0 0 18px; max-width:72ch; font-size:15px; line-height:1.5; color:var(--ink-2)}
+.fxh{margin:0 0 10px; font-size:13px; font-weight:600; color:var(--ink)}
+.fxday{display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-bottom:22px}
+.fxday .mini span:last-child{margin-top:2px}
+.fxleg{margin:0 0 4px}
+.fxleg .sw{display:inline-block; width:14px; height:10px; border-radius:4px; margin-right:6px; vertical-align:middle}
+.fxnote{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px 28px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); font-size:14px; line-height:1.5; color:var(--ink-2)}
+.fxnote h3{grid-column:1 / -1; margin:0; font-size:15px; font-weight:600; color:var(--ink)}
+.fxnote p{margin:0; max-width:46ch}
+.fxnote b{display:block; color:var(--ink); font-weight:600; margin-bottom:2px}
+@media (max-width:1040px){ .fxday{grid-template-columns:1fr 1fr} .fxnote{grid-template-columns:1fr} }
 .econ{display:grid; grid-template-columns:1fr 1fr; gap:12px}
 .econ .mini b{font-size:28px}
 .foot{padding-block:28px 48px; color:var(--ink-2); font-size:13px; display:flex; gap:12px 28px; flex-wrap:wrap; justify-content:space-between; border-top:1px solid var(--line); margin-top:32px}
@@ -480,13 +486,23 @@ h1,h2,h3{margin:0; font-weight:500; letter-spacing:-.02em; text-wrap:balance}
       </article>
 
       <article class="card s12" id="fixes">
-        <div class="ch"><h2>Worst day: what keeps every cell under 60 °C</h2><span class="chip n">40 °C site · 55 °C start · one aged cell</span></div>
-        <div class="muted small">Peak temperature of the hottest cell after 2 hours at full power (30 kW), when the cabinet already starts the discharge at 55 °C. Green bars stay under the 60 °C limit.</div>
-        <div class="fxbox"><svg class="fx" id="fx" viewBox="0 0 1000 520" role="img" aria-label="Peak cell temperature for each option, with the reason it works or falls short"></svg></div>
-        <div class="fxnote">
-          <p><b>What works:</b> start the cabinet cooler, make less heat, or take the aged cell out. Two together is safest.</p>
-          <p><b>What falls short:</b> moving heat out during the discharge. From a 55 °C start, heat can't leave the cells fast enough.</p>
+        <div class="ch"><h2>Worst day: what keeps every cell under 60 °C</h2></div>
+        <p class="fxintro">Can REON keep a cabinet safe on the hottest day it is likely to face? Eighteen ways of handling that day were run through the calibrated cabinet model. Each bar is the hottest cell's peak temperature; under 60&nbsp;°C, the cells' safe limit, passes.</p>
+        <h3 class="fxh">The day</h3>
+        <div class="fxday">
+          <div class="mini"><span>Outside</span><b>40 °C</b><span>a hot inland site</span></div>
+          <div class="mini"><span>Cabinet at the start</span><b>55 °C</b><span>already heat-soaked</span></div>
+          <div class="mini"><span>One aged cell</span><b>3× heat</b><span>three times the normal resistance</span></div>
+          <div class="mini"><span>Discharge</span><b>30 kW, 2 h</b><span>full power, all 60 kWh</span></div>
         </div>
+        <h3 class="fxh">The options</h3>
+        <div class="legend fxleg">
+          <span><i class="sw" style="background:var(--ok)"></i>Under 60 °C</span>
+          <span><i class="sw" style="background:var(--h3)"></i>Over 60 °C</span>
+          <span><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="2" y="2" width="14" height="14" rx="4" fill="none" stroke="var(--accent)" stroke-width="2.4"/></svg>Uses REON bypass</span>
+        </div>
+        <div class="fxbox"><svg class="fx" id="fx" viewBox="0 0 1000 520" role="img" aria-label="Peak cell temperature for each option, with the reason it works or falls short. A green ring marks options that use REON bypass."></svg></div>
+        <div class="fxnote" id="fxnote"></div>
       </article>
     </div>
   </section>
@@ -869,15 +885,27 @@ const WHY = ["The starting point", "Hotspot out, but the 55 °C start remains", 
   "Cancels the sun, no more", "Half the current: half the heat, same energy", "Cold air, but heat leaves the cells too slowly",
   "Starts cooler and the aged cell is out", "Aged cell out; plates already melted", "Plates soak up heat; aged cell still in",
   "Aged cell out and plates soak up the peak"];
+const REON_FIX = new Set([1, 15, 16, 18]);   // options that use REON bypass (stage4 ideas)
+// the takeaway under the chart, with every number read from the same results
+function renderFixNote() {
+  // numbers and units are joined with no-break spaces ( ) so they never split across lines
+  const I = D.ideas, alone = I[1], fan = I[15], pcm = I[18], ac = I[14], C = v => `${v.toFixed(1)} °C`, n = " ";
+  const p = (lead, txt) => H("p", {}, [H("b", {}, lead), txt]);
+  $("#fxnote").replaceChildren(H("h3", {}, "What this means for REON"),
+    p("REON alone gets close.", `Bypassing the aged cell brings the peak to ${C(alone.peak)}, ${(alone.peak - 60).toFixed(1)}${n}K over the limit, with no new hardware. The 55${n}°C start is what's left.`),
+    p("REON plus a cheap extra passes.", `Add a night fan that pre-cools the cabinet (+${fan.extra}${n}kWh a day) and the hottest cell peaks at ${C(fan.peak)}. Or add plates that melt at 57${n}°C: ${C(pcm.peak)} with no extra energy.`),
+    p("Bigger hardware doesn't.", `Air conditioning uses ${ac.extra}${n}kWh a day and still peaks at ${C(ac.peak)}. From a 55${n}°C start, cooling the air can't pull heat out of the cells fast enough.`));
+}
 function renderFixes() {
+  renderFixNote();
   const svg = $("#fx"); svg.replaceChildren();
   const its = D.ideas.map((d, k) => ({ ...d, k })).sort((a, b) => a.peak - b.peak);
   // wide: label | bar | reason columns. Otherwise the label sits above the bar, with the reason beside it or, on phones, on its own line
   const W = Math.max(300, Math.round($(".fxbox").clientWidth || 1000)), wide = W >= 900, inline = !wide && W >= 560;
-  const L = wide ? 210 : 0, RS = wide ? Math.min(330, Math.round(W * .28)) : 0, R = (wide ? 58 : 46) + RS;
+  const L = wide ? 236 : 0, RS = wide ? Math.min(330, Math.round(W * .28)) : 0, R = (wide ? 58 : 46) + RS, TX = wide ? 0 : 20;
   const rh = wide ? 28 : inline ? 40 : 56, top = 28, lo = 40, hi = 75, X = t => L + (t - lo) / (hi - lo) * (W - L - R);
   svg.setAttribute("viewBox", `0 0 ${W} ${top + its.length * rh + 10}`);
-  const ink = cssv("--ink"), ink2 = cssv("--ink-2"), ok = cssv("--ok"), f = { "font-family": "inherit" };
+  const ink = cssv("--ink"), ink2 = cssv("--ink-2"), ok = cssv("--ok"), acc = cssv("--accent"), f = { "font-family": "inherit" };
   for (const t of [40, 50, 60, 70]) {
     svg.append(S("line", { x1: X(t), x2: X(t), y1: top - 6, y2: top + its.length * rh, stroke: t === 60 ? cssv("--bad") : cssv("--line"), "stroke-width": t === 60 ? 1.6 : 1, "stroke-dasharray": t === 60 ? "" : "3 4" }));
     svg.append(S("text", { x: X(t), y: top - 12, "text-anchor": t === 40 && !wide ? "start" : "middle", "font-size": 12, fill: t === 60 ? cssv("--bad") : ink2, "font-weight": t === 60 ? 600 : 400, ...f }, t === 60 && W >= 420 ? "60 °C limit" : `${t} °C`));
@@ -888,14 +916,17 @@ function renderFixes() {
     const col = it.ok ? ok : heat(3 + clamp((it.peak - 60) / 13, 0, 1)), wt = it.ok ? 600 : 400;
     const by = wide ? y + 7 : y + rh - 18, bh = wide ? rh - 14 : 12;
     g.append(S("rect", { class: "bg", x: 0, y: y + 1, width: W, height: rh - 2, rx: 6, fill: "transparent" }));
+    // REON bypass options carry the map's green bypass ring beside their label
+    if (REON_FIX.has(it.k)) g.append(S("rect", { ...(wide ? { x: L - 27, y: y + 7, width: 14, height: 14 } : { x: 2, y: y + 3, width: 13, height: 13 }),
+      rx: 4, fill: "none", stroke: acc, "stroke-width": 2.2 }, [S("title", {}, "Uses REON bypass")]));
     if (wide) {
-      g.append(S("text", { x: L - 12, y: y + 18, "text-anchor": "end", "font-size": 13, fill: ink, "font-weight": wt, ...f }, SHORT[it.k]));
+      g.append(S("text", { x: L - 36, y: y + 18, "text-anchor": "end", "font-size": 13, fill: ink, "font-weight": wt, ...f }, SHORT[it.k]));
       g.append(S("text", { x: W - RS, y: y + 18, "font-size": 12.5, fill: ink2, ...f }, WHY[it.k]));
     } else if (inline) {
-      g.append(S("text", { x: 0, y: y + 14, "font-size": 12.5, fill: ink, "font-weight": wt, ...f }, [SHORT[it.k], S("tspan", { fill: ink2, "font-weight": 400 }, `  ·  ${WHY[it.k]}`)]));
+      g.append(S("text", { x: TX, y: y + 14, "font-size": 12.5, fill: ink, "font-weight": wt, ...f }, [SHORT[it.k], S("tspan", { fill: ink2, "font-weight": 400 }, `  ·  ${WHY[it.k]}`)]));
     } else {
-      g.append(S("text", { x: 0, y: y + 14, "font-size": 12.5, fill: ink, "font-weight": wt, ...f }, SHORT[it.k]));
-      g.append(S("text", { x: 0, y: y + 30, "font-size": 12, fill: ink2, ...f }, WHY[it.k]));
+      g.append(S("text", { x: TX, y: y + 14, "font-size": 12.5, fill: ink, "font-weight": wt, ...f }, SHORT[it.k]));
+      g.append(S("text", { x: TX, y: y + 30, "font-size": 12, fill: ink2, ...f }, WHY[it.k]));
     }
     g.append(S("rect", { x: X(lo), y: by, width: Math.max(2, X(it.peak) - X(lo)), height: bh, rx: 5, fill: col }));
     g.append(S("text", { x: X(it.peak) + 6, y: by + bh / 2 + 4.5, "font-size": 12.5, fill: it.ok ? ok : ink2, "font-weight": 600, ...f }, `${it.peak.toFixed(1)}`));
